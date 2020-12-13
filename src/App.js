@@ -1,12 +1,20 @@
-import './App.css';
-import {Route, Switch} from 'react-router-dom';
-import Home from './Pages/Home/Home';
-import Authtentication from './Pages/Authtentication/Authtentication';
-import Category from './Pages/Cattegory/Category';
-import CategoryProducts from './Pages/CategoryProducts/CategoryProducts';
-import Checkout from './Pages/Checkout/Checkout';
+import { useEffect } from "react";
+import "./App.css";
+import { Route, Switch } from "react-router-dom";
+import Home from "./Pages/Home/Home";
+import Authtentication from "./Pages/Authtentication/Authtentication";
+import Category from "./Pages/Cattegory/Category";
+import CategoryProducts from "./Pages/CategoryProducts/CategoryProducts";
+import Checkout from "./Pages/Checkout/Checkout";
+import { connect } from "react-redux";
+import { firebaseAuthListener } from "./Redux/auth/authActions";
 
-function App() {
+function App({ firebaseAuthListener }) {
+  useEffect(() => {
+    //CDM
+    firebaseAuthListener();
+  }, [firebaseAuthListener]);
+
   return (
     <Switch>
       <Route path="/" component={Home} exact />
@@ -18,4 +26,8 @@ function App() {
   );
 }
 
-export default App;
+var actions = {
+  firebaseAuthListener,
+};
+
+export default connect(null, actions)(App);
