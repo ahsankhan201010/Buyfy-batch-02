@@ -49,7 +49,7 @@ export var fetchProducts = () => async (dispatch) => {
     var query = await firestore.collection("products").get();
     var products = [];
     query.docs.forEach((doc) => {
-      products.push(doc.data());
+      products.push({...doc.data(), id: doc.id});
     });
     dispatch({
       type: SET_PRODUCTS,
@@ -67,7 +67,7 @@ export var fetchCategoryProducts = (category) => async (dispatch) => {
     var query = await firestore.collection("products").where("category","==",category).get();
     var products = [];
     query.docs.forEach((doc) => {
-      products.push(doc.data());
+      products.push({...doc.data(), id: doc.id});
     });
     dispatch({
       type: SET_PRODUCTS,
@@ -90,3 +90,4 @@ export var clearProducts = () => async (dispatch) => {
     
   }
 }
+
