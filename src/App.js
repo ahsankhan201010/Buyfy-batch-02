@@ -10,6 +10,7 @@ import { connect } from "react-redux";
 import { firebaseAuthListener } from "./Redux/auth/authActions";
 import Test from "./Pages/Test/Test";
 import Navbar from "./Components/Navbar/Navbar";
+import Product from './Pages/Product/Product';
 
 function App({ firebaseAuthListener }) {
   useEffect(() => {
@@ -25,6 +26,7 @@ function App({ firebaseAuthListener }) {
         <Route path="/authentication" component={Authtentication} />
         <Route path="/categories" component={Category} />
         <Route path="/category-products/:category" component={CategoryProducts} />
+        <Route path="/product/:productId" component={Product} />
         <Route path="/checkout" component={Checkout} />
         <Route path="/test" component={Test} />
       </Switch>
