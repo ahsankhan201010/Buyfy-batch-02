@@ -22,6 +22,11 @@ const Navbar = () => {
             <h3>Auth</h3>
           </Link>
         </div>
+        <div className="navItem">
+          <Link to="/test">
+            <h3>Test</h3>
+          </Link>
+        </div>
       </div>
     </div>
   );
