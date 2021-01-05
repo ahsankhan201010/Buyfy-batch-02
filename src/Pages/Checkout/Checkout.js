@@ -1,16 +1,18 @@
-import React from 'react'
+import React, {useState} from 'react'
 import CheckoutList from './../../Components/CheckoutList/CheckoutList';
 import { connect } from 'react-redux';
 import { calculateTotal } from './../../utility/checkout';
+import OrderForm from './../../Components/OrderForm/OrderForm';
 
 const Checkout = ({total}) => {
-    console.log(total)
+    var [shipFormShown, setShipFormShown] = useState(false)
     return (
         <div>
             <h1>Checkout page</h1>
             <CheckoutList/>
             <h3>Total Amount - {total}</h3>
-            <button>PAY NOW {total}</button>
+            { shipFormShown && <OrderForm/>}
+            <button onClick={() => setShipFormShown(!shipFormShown)} >PROCEED & PAY!</button>
         </div>
     )
 }
