@@ -8,3 +8,8 @@ a {
     text-decoration: none;
     color: inherit;
 }
+
+:root {
+    --font-family-header: 'Roboto', sans-serif;
+    --font-family-paragraph: 'Open Sans', sans-serif;
+}

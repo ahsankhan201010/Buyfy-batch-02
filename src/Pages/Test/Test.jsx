@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { connect } from 'react-redux';
 import { uploadProduct } from './../../Redux/product/productActions';
 import Cart from './../../Components/Cart/Cart';
+import Header from "../../Components/Header/Header";
+import Paragraph from "../../Components/Paragraph/Paragraph";
+import Button from "../../Components/Button/Button";
 
 const Test = ({uploadProduct}) => {
   var [category, setCategory] = useState("");
@@ -24,7 +27,7 @@ const Test = ({uploadProduct}) => {
     uploadProduct(productObj);
   };
   return (
-    <div>
+    <div style={{fontSize: "62.5%"}}> //1em = 10px
       <h1>Test</h1>
       {/* <form onSubmit={handleSubmit}>
         <input
@@ -67,6 +70,13 @@ const Test = ({uploadProduct}) => {
         <button type="submit">submit</button>
       </form> */}
       <Cart/>
+      <Header fontSize={32}  fontWeight="bold">This is my header</Header>
+      <Header fontSize={16}  fontWeight="light">This is my header number 2</Header>
+      <Header fontSize={42} color="purple"  fontWeight="semi-bold">This is my header number 3</Header>
+      <Paragraph fontSize={32}  fontWeight="bold">This is my Paragraph</Paragraph>
+      <Paragraph fontSize={16}  fontWeight="light">This is my Paragraph number 2</Paragraph>
+      <Paragraph fontSize={42} color="purple"  fontWeight="semi-bold">This is my Paragraph number 3</Paragraph>
+      <Button fontSize={45} fontWeight="bold" background="orange">Click Me and click me again!</Button>
     </div>
   );
 };
