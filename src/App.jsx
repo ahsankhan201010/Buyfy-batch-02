@@ -10,7 +10,7 @@ import { connect } from "react-redux";
 import { firebaseAuthListener } from "./Redux/auth/authActions";
 import Test from "./Pages/Test/Test";
 import Navbar from "./Components/Navbar/Navbar";
-import Product from './Pages/Product/Product';
+import Product from "./Pages/Product/Product";
 
 function App({ firebaseAuthListener }) {
   useEffect(() => {
@@ -20,15 +20,20 @@ function App({ firebaseAuthListener }) {
 
   return (
     <div>
-      <Navbar/>
+      <Navbar />
       <Switch>
-        <Route path="/" component={Home} exact />
-        <Route path="/authentication" component={Authtentication} />
-        <Route path="/categories" component={Category} />
-        <Route path="/category-products/:category" component={CategoryProducts} />
-        <Route path="/product/:productId" component={Product} />
-        <Route path="/checkout/:orderId" component={Checkout} />
-        <Route path="/test" component={Test} />
+        <div className="pagesContainer">
+          <Route path="/" component={Home} exact />
+          <Route path="/authentication" component={Authtentication} />
+          <Route path="/categories" component={Category} />
+          <Route
+            path="/category-products/:category"
+            component={CategoryProducts}
+          />
+          <Route path="/product/:productId" component={Product} />
+          <Route path="/checkout/:orderId" component={Checkout} />
+          <Route path="/test" component={Test} />
+        </div>
       </Switch>
     </div>
   );

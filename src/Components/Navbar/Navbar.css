@@ -1,24 +1,15 @@
 .navbar {
   width: 100vw;
-  height: 12vh;
-  background-color: lightgray;
+  height: var(--navbar-height);
+  background: lightgray;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr repeat(3,min-content);
+  padding: 0px 80px;
+  align-content: center;
+  column-gap: 20px;
+  font-size: 62.5%;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
-.navItemContainer {
-  display: flex;
-  align-items: center;
-}
-
-.navItem {
-  padding: 0 30px;
-  cursor: pointer;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  padding: 0 50px;
-  box-sizing: border-box;
-}

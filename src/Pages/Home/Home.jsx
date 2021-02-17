@@ -1,12 +1,16 @@
-import React from 'react'
-import { auth } from './../../Firebase/Firebase';
-
+import React from "react";
+import "./Home.css";
 const Home = () => {
-    return (
-        <div>
-            <h1>Home page</h1>
-        </div>
-    )
-}
+  return (
+    <div className="home">
+      <div className="homeLeft center">
+        <h1>Left</h1>
+      </div>
+      <div className="homeRight center">
+        <h1>Right</h1>
+      </div>
+    </div>
+  );
+};
 
-export default Home
+export default Home;
