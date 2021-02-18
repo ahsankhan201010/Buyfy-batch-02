@@ -9,10 +9,11 @@ const Button = ({
   color = "white",
   fontSize,
   fontWeight,
+  ...restProps
 }) => {
   return (
-    <button style={{ background, color, ...style }} className="button">
-      <Paragraph color fontSize={fontSize} fontWeigh={fontWeight}>
+    <button {...restProps} style={{ background, color, ...style }} className="button">
+      <Paragraph color fontSize={fontSize} fontWeight={fontWeight}>
         {children}
       </Paragraph>
     </button>
