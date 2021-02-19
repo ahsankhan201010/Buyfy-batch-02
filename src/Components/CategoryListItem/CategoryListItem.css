@@ -1,0 +1,18 @@
+.category-list-item {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* background: lightpink; */
+    justify-items: center;
+    position: relative;
+    margin-bottom: 15em;
+}
+
+.cateogry-text {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(-70%);
+    font-size: 180px;
+    letter-spacing: 25px;
+    cursor: pointer;
+}
