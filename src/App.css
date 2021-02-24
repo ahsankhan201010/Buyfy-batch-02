@@ -16,6 +16,10 @@ a {
     --navbar-height: 70px;
 }
 
+button {
+    font-size: inherit;
+}
+
 .center {
     display: flex;
     justify-content: center;

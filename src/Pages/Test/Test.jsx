@@ -78,7 +78,7 @@ const Test = ({uploadProduct}) => {
       <Paragraph fontSize={16}  fontWeight="light">This is my Paragraph number 2</Paragraph>
       <Paragraph fontSize={42} color="purple"  fontWeight="semi-bold">This is my Paragraph number 3</Paragraph>
       <Button fontSize={45} fontWeight="bold" background="orange">Click Me and click me again!</Button> */}
-      <ProductCard/>
+      {/* <ProductCard/> */}
     </div>
   );
 };

@@ -3,7 +3,7 @@
   height: var(--navbar-height);
   background: lightgray;
   display: grid;
-  grid-template-columns: 1fr repeat(3,min-content);
+  grid-template-columns: 1fr repeat(4,min-content);
   padding: 0px 80px;
   align-content: center;
   column-gap: 20px;
