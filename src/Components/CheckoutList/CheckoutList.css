@@ -1,0 +1,14 @@
+.checkout-list {
+    display: grid;
+    background: lightsalmon;
+    overflow-y: scroll;
+    row-gap: 1em;
+}
+
+.checkout-list-item-extend {
+    justify-items: center;
+    /* justify-content: center; */
+    margin-bottom: 4em;
+    border-bottom: 2px solid black;
+    padding: 1em 0em;
+}

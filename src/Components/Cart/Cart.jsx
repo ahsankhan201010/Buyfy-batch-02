@@ -13,7 +13,7 @@ const Cart = ({ generateOrder }) => {
       <Header fontSize={24} style={{letterSpacing: "5px"}} >CART</Header>
       <CartList />
       {/* <button onClick={generateOrder}>CHECKOUT</button> */}
-      <Button fontSize={24} background="rgba(0,0,0,0.6)" style={{letterSpacing: "5px", width: "100%"}}>CHECKOUT</Button>
+      <Button onClick={generateOrder} fontSize={24} background="rgba(0,0,0,0.6)" style={{letterSpacing: "5px", width: "100%"}}>CHECKOUT</Button>
     </div>
   );
 };
