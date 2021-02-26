@@ -21,11 +21,13 @@ const Paragraph = ({
   fontWeight = "regular",
   style = {},
   color = "black",
+  ...restProps
 }) => {
   var fontWeightValue = fontWeigtEstimater(fontWeight);
   var fontSizeValue = fontSize/10;
   return (
     <div
+      {...restProps}
       className="paragraph"
       style={{
         fontWeight: fontWeightValue,

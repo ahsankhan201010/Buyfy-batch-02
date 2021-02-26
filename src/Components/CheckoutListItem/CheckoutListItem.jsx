@@ -14,13 +14,19 @@ const CheckoutListItem = ({
   deleteProuctFromCart,
   ...product
 }) => {
-  var { title, cost, quantity, id } = product;
+  var { title, cost, quantity, coverPhoto, id } = product;
   return (
     <div className="checkout-list-item">
       <div className="checkout-item-product">
-        <div className="checkout-item-product-image"></div>
+        <div
+          className="checkout-item-product-image"
+          style={{
+            background: `url(${coverPhoto})`,
+            backgroundSize: "100% 100%,cover",
+          }}
+        ></div>
         <Paragraph fontSize={20} fontWeight="semi-bold">
-          My Product
+          {title}
         </Paragraph>
       </div>
       <div
@@ -36,14 +42,15 @@ const CheckoutListItem = ({
             borderBottomLeftRadius: "20px",
             transform: "translateX(5px)",
           }}
+          onClick={() => addProductToCart(product)}
         >
           +
         </Button>
         <Button color="black" background="white">
-          3
+          {quantity}
         </Button>
         <Button
-        fontWeight="bold"
+          fontWeight="bold"
           color="black"
           background="white"
           style={{
@@ -51,15 +58,20 @@ const CheckoutListItem = ({
             borderBottomRightRadius: "20px",
             transform: "translateX(-5px)",
           }}
+          onClick={() => removeProductFromCart(id)}
         >
           -
         </Button>
       </div>
       <div className="checkout-item-price center">
-        <Paragraph fontSize={26} fontWeight="semi-bold">$ 240</Paragraph>
+        <Paragraph fontSize={26} fontWeight="semi-bold">
+          $ {cost}
+        </Paragraph>
       </div>
       <div className="checkout-item-cross center">
-      <Paragraph fontSize={30} fontWeight="semi-bold">x</Paragraph>
+        <Paragraph style={{cursor: "pointer"}} onClick={() => deleteProuctFromCart(id)} fontSize={30} fontWeight="semi-bold">
+          x
+        </Paragraph>
       </div>
       {/* <h1>
         {title} - {cost} - <button onClick={() => deleteProuctFromCart(id)}>X</button>

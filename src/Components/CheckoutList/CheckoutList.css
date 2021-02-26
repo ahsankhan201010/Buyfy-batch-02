@@ -3,6 +3,7 @@
     background: lightsalmon;
     overflow-y: scroll;
     row-gap: 1em;
+    align-content: start;
 }
 
 .checkout-list-item-extend {
