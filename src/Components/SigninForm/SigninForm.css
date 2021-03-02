@@ -1,0 +1,7 @@
+.sign-in-form {
+  display: grid;
+  width: 100%;
+  justify-items: center;
+  row-gap: 1em;
+  /* background: coral; */
+}
