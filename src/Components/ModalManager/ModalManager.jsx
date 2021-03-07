@@ -1,12 +1,14 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import AddressFornModal from '../AddressFormModal/AddressFornModal'
 import ErrorModal from '../ErrorModal/ErrorModal'
 import TestModal from '../TestModal/TestModal'
 
 
 var modalLookUp = {
     testModal: TestModal,
-    errorModal: ErrorModal
+    errorModal: ErrorModal,
+    addressFormModal: AddressFornModal
 }
 
 const ModalManager = ({modal}) => {

@@ -95,6 +95,15 @@ const Test = ({ uploadProduct, openModal }) => {
       >
         OPEN ERROR MODAL
       </Button>
+      <Button
+        onClick={() =>
+          openModal({
+            modalType: "addressFormModal",
+          })
+        }
+      >
+        OPEN ADDRESS FORM MODAL
+      </Button>
     </div>
   );
 };

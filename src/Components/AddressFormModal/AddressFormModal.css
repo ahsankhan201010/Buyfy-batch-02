@@ -1,0 +1,14 @@
+.address-form-modal {
+    width: 60em;
+    height: 40em;
+    background-color: white;
+    border-radius: 20px;
+    padding: 3em;
+}
+
+.address-form-fields  {
+    display: grid;
+    grid-template-columns: 30fr 70fr;
+    column-gap: 3em;
+    margin: 2em 0em;
+}
