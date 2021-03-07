@@ -1,13 +1,14 @@
 import React, { useState } from "react";
-import { connect } from 'react-redux';
-import { uploadProduct } from './../../Redux/product/productActions';
-import Cart from './../../Components/Cart/Cart';
+import { connect } from "react-redux";
+import { uploadProduct } from "./../../Redux/product/productActions";
+import Cart from "./../../Components/Cart/Cart";
 import Header from "../../Components/Header/Header";
 import Paragraph from "../../Components/Paragraph/Paragraph";
 import Button from "../../Components/Button/Button";
 import ProductCard from "../../Components/ProductCard/ProductCard";
+import { openModal } from "./../../Redux/modal/modalActions";
 
-const Test = ({uploadProduct}) => {
+const Test = ({ uploadProduct, openModal }) => {
   var [category, setCategory] = useState("");
   var [title, setTitle] = useState("");
   var [cost, setCost] = useState("");
@@ -28,7 +29,9 @@ const Test = ({uploadProduct}) => {
     uploadProduct(productObj);
   };
   return (
-    <div style={{fontSize: "62.5%"}}> //1em = 10px
+    <div style={{ fontSize: "62.5%" }}>
+      {" "}
+      //1em = 10px
       <h1>Test</h1>
       {/* <form onSubmit={handleSubmit}>
         <input
@@ -70,7 +73,7 @@ const Test = ({uploadProduct}) => {
         <input onChange={(e) => setCoverPhoto(e.target.files[0])} type="file" placeholder="cover photo" />
         <button type="submit">submit</button>
       </form> */}
-      <Cart/>
+      {/* <Cart/> */}
       {/* <Header fontSize={32}  fontWeight="bold">This is my header</Header>
       <Header fontSize={16}  fontWeight="light">This is my header number 2</Header>
       <Header fontSize={42} color="purple"  fontWeight="semi-bold">This is my header number 3</Header>
@@ -79,12 +82,26 @@ const Test = ({uploadProduct}) => {
       <Paragraph fontSize={42} color="purple"  fontWeight="semi-bold">This is my Paragraph number 3</Paragraph>
       <Button fontSize={45} fontWeight="bold" background="orange">Click Me and click me again!</Button> */}
       {/* <ProductCard/> */}
+      <Button onClick={() => openModal({ modalType: "testModal" })}>
+        OPEN TEST MODAL
+      </Button>
+      <Button
+        onClick={() =>
+          openModal({
+            modalType: "errorModal",
+            modalProps: { error: "something went wrong!" },
+          })
+        }
+      >
+        OPEN ERROR MODAL
+      </Button>
     </div>
   );
 };
 
 var actions = {
-    uploadProduct
-}
+  uploadProduct,
+  openModal,
+};
 
-export default connect(null,actions)(Test);
+export default connect(null, actions)(Test);
