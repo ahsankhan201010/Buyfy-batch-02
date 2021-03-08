@@ -4,18 +4,20 @@ import "./index.css";
 import App from "./App";
 import { Router } from "react-router-dom";
 import { Provider } from "react-redux";
-import store from "./Redux/store";
+import store, {persistor} from "./Redux/store";
 // import reportWebVitals from './reportWebVitals';
 import history from "./history/history";
 import ModalManager from "./Components/ModalManager/ModalManager";
-
+import { PersistGate } from "redux-persist/integration/react";
 
 ReactDOM.render(
   <React.StrictMode>
     <Router history={history}>
       <Provider store={store}>
-        <ModalManager/>
-        <App />
+        <PersistGate persistor={persistor}> 
+          <ModalManager />
+          <App />
+        </PersistGate>
       </Provider>
     </Router>
   </React.StrictMode>,
