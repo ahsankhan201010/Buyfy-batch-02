@@ -3,15 +3,30 @@ import ModalContainer from "../ModalContainer/ModalContainer";
 import "./AddressFormModal.css";
 import TextField from "@material-ui/core/TextField";
 import Button from "../Button/Button";
+import { connect } from "react-redux";
+import { processOrder } from './../../Redux/order/orderActions';
 
-const AddressFornModal = () => {
+const AddressFornModal = ({cart, processOrder, orderId}) => {
+
   var [address, setAddress] = useState("");
   var [name, setName] = useState("");
   var [contact, setContact] = useState("");
   var [email, setEmail] = useState("");
+
+  var handleSubmit = (e) => {
+    e.preventDefault();
+    var addressInfo = {
+      address,
+      name,
+      contact,
+      email
+
+    }
+    processOrder({cart, addressInfo, orderId})
+  }
   return (
     <ModalContainer>
-      <form className="address-form-modal center">
+      <form onSubmit={handleSubmit} className="address-form-modal center">
         <div className="address-form-fields">
           <TextField
             value={name}
@@ -50,4 +65,12 @@ const AddressFornModal = () => {
   );
 };
 
-export default AddressFornModal;
+var mapState = (state) => ({
+  cart: state.cart
+})
+
+var actions = {
+  processOrder
+}
+
+export default connect(mapState,actions)(AddressFornModal);

@@ -8,8 +8,7 @@ import Header from "../../Components/Header/Header";
 import Button from "../../Components/Button/Button";
 import { openModal } from "./../../Redux/modal/modalActions";
 
-const Checkout = ({ total, openModal }) => {
-  var [shipFormShown, setShipFormShown] = useState(false);
+const Checkout = ({ total, openModal, match: {params: {orderId}} }) => {
   return (
     <div className="checkout-page-container">
       <div className="checkout">
@@ -25,6 +24,7 @@ const Checkout = ({ total, openModal }) => {
             onClick={() =>
               openModal({
                 modalType: "addressFormModal",
+                modalProps: {orderId}
               })
             }
             style={{ justifySelf: "end", borderRadius: "30px" }}
